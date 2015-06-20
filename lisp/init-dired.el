@@ -4,6 +4,9 @@
 (setq-default diredp-hide-details-initially-flag nil
               dired-dwim-target t)
 
+(autoload 'dired-async-mode "dired-async.el" nil t)
+(dired-async-mode t)
+
 ;; Prefer g-prefixed coreutils version of standard utilities when available
 (let ((gls (executable-find "gls")))
   (when gls (setq insert-directory-program gls)))
