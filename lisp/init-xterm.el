@@ -2,7 +2,7 @@
 
 (defun fix-up-xterm-control-arrows ()
   (let ((map (if (boundp 'input-decode-map)
-                 input-decode-map
+               input-decode-map
                function-key-map)))
     (define-key map "\e[1;5A" [C-up])
     (define-key map "\e[1;5B" [C-down])
