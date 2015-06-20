@@ -9,15 +9,10 @@
   (when sanityinc/force-default-font-for-symbols
     (set-fontset-font "fontset-default" 'symbol (face-attribute 'default :family))))
 
+(add-to-list 'default-frame-alist '(font . "MonacoB2 for Powerline"))
+(set-face-attribute 'default nil :font "MonacoB2 for Powerline")
+(set-frame-font "MonacoB2 for Powerline" nil t)
+
 (add-hook 'after-init-hook 'sanityinc/maybe-use-default-font-for-symbols)
-
-
-;;; Changing font sizes
-
-(require-package 'default-text-scale)
-(global-set-key (kbd "C-M-=") 'default-text-scale-increase)
-(global-set-key (kbd "C-M--") 'default-text-scale-decrease)
-
-
 
 (provide 'init-fonts)

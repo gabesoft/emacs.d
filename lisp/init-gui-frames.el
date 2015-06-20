@@ -61,12 +61,12 @@
 (add-hook 'after-make-frame-functions
           (lambda (frame)
             (with-selected-frame frame
-              (unless window-system
-                (set-frame-parameter nil 'menu-bar-lines 0)))))
+                                 (unless window-system
+                                   (set-frame-parameter nil 'menu-bar-lines 0)))))
 
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
-                   (abbreviate-file-name (buffer-file-name))
+                 (abbreviate-file-name (buffer-file-name))
                  "%b"))))
 
 ;; Non-zero values for `line-spacing' can mess up ansi-term and co,

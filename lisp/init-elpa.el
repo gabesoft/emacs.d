@@ -11,7 +11,6 @@
 (require 'package)
 
 
-
 ;;; Standard package repositories
 
 (when (< emacs-major-version 24)
@@ -30,7 +29,6 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
 
-
 ;; If gpg cannot be found, signature checking will fail, so we
 ;; conditionally enable it according to whether gpg is available. We
 ;; re-run this check once $PATH has been configured
@@ -42,7 +40,6 @@
   (sanityinc/package-maybe-enable-signatures))
 
 
-
 ;;; On-demand installation of packages
 
 (defun require-package (package &optional min-version no-refresh)
@@ -70,18 +67,15 @@ locate PACKAGE."
      (message "Couldn't install package `%s': %S" package err)
      nil)))
 
-
 ;;; Fire up package.el
 
 (setq package-enable-at-startup nil)
 (package-initialize)
 
 
-
 (require-package 'fullframe)
 (fullframe list-packages quit-window)
 
-
 (require-package 'cl-lib)
 (require 'cl-lib)
 

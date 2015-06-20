@@ -8,16 +8,16 @@
 ;; Old-style color theming support (via color-theme.el)
 ;;------------------------------------------------------------------------------
 (defcustom window-system-color-theme 'color-theme-sanityinc-solarized-dark
-  "Color theme to use in window-system frames.
-If Emacs' native theme support is available, this setting is
-ignored: use `custom-enabled-themes' instead."
-  :type 'symbol)
+           "Color theme to use in window-system frames.
+           If Emacs' native theme support is available, this setting is
+           ignored: use `custom-enabled-themes' instead."
+           :type 'symbol)
 
 (defcustom tty-color-theme 'color-theme-terminal
-  "Color theme to use in TTY frames.
-If Emacs' native theme support is available, this setting is
-ignored: use `custom-enabled-themes' instead."
-  :type 'symbol)
+           "Color theme to use in TTY frames.
+           If Emacs' native theme support is available, this setting is
+           ignored: use `custom-enabled-themes' instead."
+           :type 'symbol)
 
 (unless (boundp 'custom-enabled-themes)
   (defun color-theme-terminal ()
@@ -26,9 +26,9 @@ ignored: use `custom-enabled-themes' instead."
 
   (defun apply-best-color-theme-for-frame-type (frame)
     (with-selected-frame frame
-      (funcall (if window-system
-                   window-system-color-theme
-                 tty-color-theme))))
+                         (funcall (if window-system
+                                    window-system-color-theme
+                                    tty-color-theme))))
 
   (defun reapply-color-themes ()
     (interactive)
@@ -45,14 +45,14 @@ ignored: use `custom-enabled-themes' instead."
 ;;------------------------------------------------------------------------------
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(sanityinc-solarized-light))
+(setq-default custom-enabled-themes '(sanityinc-solarized-dark))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
   "Forcibly load the themes listed in `custom-enabled-themes'."
   (dolist (theme custom-enabled-themes)
     (unless (custom-theme-p theme)
-      (load-theme theme)))
+      (load-theme theme t)))
   (custom-set-variables `(custom-enabled-themes (quote ,custom-enabled-themes))))
 
 (add-hook 'after-init-hook 'reapply-themes)

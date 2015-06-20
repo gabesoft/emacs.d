@@ -7,15 +7,15 @@
     (progn
       (setq load-path
             (append
-             (remove-if-not
-              (lambda (dir) (file-directory-p dir))
-              (directory-files (expand-file-name parent-dir) t "^[^\\.]"))
-             load-path)))))
+              (remove-if-not
+                (lambda (dir) (file-directory-p dir))
+                (directory-files (expand-file-name parent-dir) t "^[^\\.]"))
+              load-path)))))
 
 (sanityinc/add-subdirs-to-load-path
- (expand-file-name "site-lisp/" user-emacs-directory))
+  (expand-file-name "site-lisp/" user-emacs-directory))
 
-;;; Utilities for grabbing upstream libs
+;;; Utilities for grabbing upstream libs
 
 (defun site-lisp-dir-for (name)
   (expand-file-name (format "site-lisp/%s" name) user-emacs-directory))
@@ -39,18 +39,17 @@
 
 (defun site-lisp-library-loadable-p (name)
   "Return whether or not the library `name' can be loaded from a
-source file under ~/.emacs.d/site-lisp/name/"
+  source file under ~/.emacs.d/site-lisp/name/"
   (let ((f (locate-library (symbol-name name))))
     (and f (string-prefix-p (file-name-as-directory (site-lisp-dir-for name)) f))))
 
 
-
 ;; Download these upstream libs
 
 (unless (> emacs-major-version 23)
   (ensure-lib-from-url
-   'package
-   "http://repo.or.cz/w/emacs.git/blob_plain/ba08b24186711eaeb3748f3d1f23e2c2d9ed0d09:/lisp/emacs-lisp/package.el"))
+    'package
+    "http://repo.or.cz/w/emacs.git/blob_plain/ba08b24186711eaeb3748f3d1f23e2c2d9ed0d09:/lisp/emacs-lisp/package.el"))
 
 
 (provide 'init-site-lisp)
