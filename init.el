@@ -1,4 +1,9 @@
-;;; Emacs init file
+;;; init.el --- Summary
+
+;;; Commentary:
+;;; emacs configuration
+
+;;; Code:
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
@@ -31,10 +36,7 @@
 (require 'init-ibuffer)
 (require 'init-flycheck)
 
-(require 'init-evil)
-
 (require 'init-recentf)
-(require 'init-ido)            ;; replace with helm
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
 (require 'init-windows)
@@ -48,3 +50,47 @@
 (require 'init-github)
 
 (require 'init-compile)
+(require 'init-crontab)
+(require 'init-markdown)
+(require 'init-csv)
+(require 'init-javascript)
+(require 'init-org)
+(require 'init-nxml)
+(require 'init-html)
+(require 'init-css)
+(require 'init-haml)
+(require 'init-python-mode)
+(require 'init-haskell)
+(require 'init-ruby-mode)
+(require 'init-rails)
+(require 'init-sql)
+
+(require 'init-paredit)
+(require 'init-lisp)
+(require 'init-slime)
+(require 'init-common-lisp)
+
+(require 'init-setup-helm)
+
+(when *spell-check-support-enabled*
+  (require 'init-spelling))
+
+                                        ; (require 'init-misc)
+                                        ; (require 'init-dash)
+
+                                        ; (when *is-a-mac* (require-package 'osx-location))
+                                        ; (require-package 'regex-tool)
+
+                                        ; (require 'server)
+                                        ; (unless (server-running-p) (server-start))
+
+(require 'init-evil)
+
+(add-hook 'after-init-hook
+          (lambda () (message
+                 "init completed in %.2fms"
+                 (sanityinc/time-subtract-millis after-init-time before-init-time))))
+
+(provide 'init)
+
+;;; init.el ends here

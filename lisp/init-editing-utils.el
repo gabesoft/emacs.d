@@ -25,7 +25,7 @@
  set-mark-command-repeat-pop t
  show-trailing-whitespace t
  tooltip-delay 1.5
- truncate-lines nil
+ truncate-lines t
  truncate-partial-width-windows nil
  visible-bell nil)
 
@@ -34,6 +34,7 @@
       auto-revert-verbose nil)
 
 (transient-mark-mode t)
+(ruler-mode t)
 
 ;;; Whitespace
 
