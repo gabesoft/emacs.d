@@ -40,7 +40,7 @@
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
 (require 'init-windows)
-(require 'init-sessions)
+;(require 'init-sessions)   ; contains an definition that causes a safe def prompt
 (require 'init-fonts)
 (require 'init-mmm)
 (require 'init-editing-utils)
@@ -71,6 +71,8 @@
 (require 'init-common-lisp)
 
 (require 'init-setup-helm)
+
+
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
