@@ -1,3 +1,4 @@
+(require-package 'async)
 (require-package 'dired+)
 (require-package 'dired-sort)
 
