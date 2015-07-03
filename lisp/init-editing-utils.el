@@ -10,6 +10,7 @@
 ;;----------------------------------------------------------------------------
 (setq-default
  blink-cursor-interval 0.4
+ blink-cursor-mode nil
  bookmark-default-file (expand-file-name ".bookmarks.el" user-emacs-directory)
  buffers-menu-max-size 30
  case-fold-search t
@@ -154,7 +155,7 @@
 (require-package 'ace-jump-mode)
 (global-set-key (kbd "C-;") 'ace-jump-mode)
 (global-set-key (kbd "C-:") 'ace-jump-word-mode)
-
+ 
 
 (require-package 'multiple-cursors)
 ;; multiple-cursors
