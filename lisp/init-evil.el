@@ -19,6 +19,7 @@
 (global-set-key [escape] 'evil-exit-emacs-state)
 
 (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
+(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-line-mode)
 
 ;; Use "C-b" for scrolling up
 ;; (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
