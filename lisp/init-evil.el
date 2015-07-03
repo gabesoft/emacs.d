@@ -20,11 +20,12 @@
 
 (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
 
-(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
-(define-key evil-visual-state-map (kbd "C-u") 'evil-scroll-up)
-(define-key evil-insert-state-map (kbd "C-u")
-            (lambda ()
-              (interactive)
-              (evil-delete (point-at-bol) (point))))
+;; Use "C-b" for scrolling up
+;; (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+;; (define-key evil-visual-state-map (kbd "C-u") 'evil-scroll-up)
+;; (define-key evil-insert-state-map (kbd "C-u")
+;;             (lambda ()
+;;               (interactive)
+;;               (evil-delete (point-at-bol) (point))))
 
 (provide 'init-evil)
