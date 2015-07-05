@@ -10,8 +10,14 @@
 (helm-adaptive-mode t)
 (helm-push-mark-mode t)
 
-(projectile-global-mode)
+;; Projectile setup
+(helm-projectile-on)
+(setq projectile-enable-caching nil)
+(setq projectile-require-project-root t)
+(setq helm-projectile-fuzzy-match t)
 
+
+;; Fuzzy match
 (setq helm-M-x-fuzzy-match t)
 (setq helm-apropos-fuzzy-match t)
 (setq helm-bookmark-show-location t)
@@ -25,7 +31,7 @@
 (setq helm-semantic-fuzzy-match t)
 (setq helm-always-two-windows t)
 
-                                        ; (global-set-key (kbd "M-x") 'helm-M-x)
+;; Key bindings
 (global-set-key (kbd "M-x")                          'undefined)
 (global-set-key (kbd "M-x")                          'helm-M-x)
 (global-set-key (kbd "M-y")                          'helm-show-kill-ring)
