@@ -45,6 +45,7 @@
   "e" 'find-file
   "f" 'helm-projectile
   "b" 'switch-to-bufer
+  "w" 'save-buffer
   "k" 'kill-buffer)
 
 ;; Nerd Commenter
