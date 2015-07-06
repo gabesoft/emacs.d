@@ -27,13 +27,12 @@
 (define-key evil-normal-state-map (kbd "<right>") 'evil-window-increase-width)
 (define-key evil-normal-state-map (kbd "<left>") 'evil-window-decrease-width)
 
-;; Use "C-b" for scrolling up
-;; (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
-;; (define-key evil-visual-state-map (kbd "C-u") 'evil-scroll-up)
-;; (define-key evil-insert-state-map (kbd "C-u")
-;;             (lambda ()
-;;               (interactive)
-;;               (evil-delete (point-at-bol) (point))))
+(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+(define-key evil-visual-state-map (kbd "C-u") 'evil-scroll-up)
+(define-key evil-insert-state-map (kbd "C-u")
+  (lambda ()
+    (interactive)
+    (evil-delete (point-at-bol) (point))))
 
 ;; Leader
 (require-package 'evil-leader)
