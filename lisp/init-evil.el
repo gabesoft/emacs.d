@@ -43,7 +43,7 @@
 (evil-leader/set-key
   "e" 'find-file
   "f" 'helm-projectile
-  "b" 'switch-to-bufer
+  "b" 'switch-to-buffer
   "w" 'save-buffer
   "k" 'kill-buffer)
 
