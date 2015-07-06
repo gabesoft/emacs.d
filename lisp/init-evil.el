@@ -45,7 +45,7 @@
   "e" 'find-file
   "f" 'helm-projectile
   "b" 'switch-to-bufer
-  "k" 'kill-bufer)
+  "k" 'kill-buffer)
 
 ;; Nerd Commenter
 (require-package 'evil-nerd-commenter)
