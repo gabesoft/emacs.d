@@ -69,12 +69,16 @@
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
+  "A" 'ag
+  "a" 'ag-project
+  "b" 'switch-to-buffer
   "e" 'find-file
   "f" 'helm-projectile
-  "b" 'switch-to-buffer
+  "k" 'kill-buffer
   "w" 'save-buffer
+  "d" 'dired-jump
   "x" 'helm-M-x
-  "k" 'kill-buffer)
+  )
 
 ;; Nerd Commenter
 (require-package 'evil-nerd-commenter)
