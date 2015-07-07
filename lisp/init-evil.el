@@ -28,7 +28,21 @@
 
 (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
 (define-key evil-insert-state-map (kbd "C-t") 'transpose-chars)
+
+;; Ace-jump integration
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-line-mode)
+(define-key evil-normal-state-map (kbd "C-SPC") 'ace-jump-word-mode)
+(define-key evil-normal-state-map (kbd "C-<return>") 'ace-jump-char-mode)
+
+(defadvice evil-visual-line (before spc-for-line-jump activate)
+  "In visual line mode press space to activate line-mode."
+  (define-key evil-motion-state-map (kbd "SPC") #'evil-ace-jump-line-mode))
+(defadvice evil-visual-char (before spc-for-char-jump activate)
+  "In visual mode press space to activate char-mode."
+  (define-key evil-motion-state-map (kbd "SPC") #'evil-ace-jump-char-mode))
+(defadvice evil-visual-block (before spc-for-char-jump activate)
+  "In visual block mode press space to activate char-mode."
+  (define-key evil-motion-state-map (kbd "SPC") #'evil-ace-jump-char-mode))
 
 ;; Save on insert exit
 (add-hook 'evil-insert-state-exit-hook (lambda ()

@@ -40,7 +40,7 @@
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
 (require 'init-windows)
-;(require 'init-sessions)   ; contains an definition that causes a safe def prompt
+(require 'init-sessions)
 (require 'init-fonts)
 (require 'init-mmm)
 (require 'init-editing-utils)
@@ -70,8 +70,6 @@
 (require 'init-slime)
 (require 'init-common-lisp)
 
-(require 'init-key-combo)
-
 (require 'init-setup-helm)
 
 
@@ -88,6 +86,9 @@
                                         ; (require 'server)
                                         ; (unless (server-running-p) (server-start))
 
+(require 'init-key-combo)
+(require 'init-linum-relative)
+(require 'init-evil-surround)
 (require 'init-evil)
 
 (add-hook 'after-init-hook

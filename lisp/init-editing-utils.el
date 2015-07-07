@@ -28,7 +28,9 @@
  tooltip-delay 1.5
  truncate-lines t
  truncate-partial-width-windows nil
+ ring-bell-function 'ignore
  visible-bell nil)
+
 
 (global-auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t
