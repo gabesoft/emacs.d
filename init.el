@@ -70,6 +70,8 @@
 (require 'init-slime)
 (require 'init-common-lisp)
 
+(require 'init-key-combo)
+
 (require 'init-setup-helm)
 
 

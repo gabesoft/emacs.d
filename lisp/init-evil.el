@@ -1,3 +1,11 @@
+;;; package --- Summary
+
+;;; Commentary:
+;;  Evil mode settings
+
+
+;;; Code:
+
 (require-package 'evil)
 (evil-mode t)
 
@@ -19,7 +27,13 @@
 (global-set-key [escape] 'evil-exit-emacs-state)
 
 (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
+(define-key evil-insert-state-map (kbd "C-t") 'transpose-chars)
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-line-mode)
+
+;; Save on insert exit
+(add-hook 'evil-insert-state-exit-hook (lambda ()
+                                         (if (buffer-file-name)
+                                             (evil-save (buffer-file-name) t))))
 
 ;; Window resizing
 (define-key evil-normal-state-map (kbd "<up>") 'evil-window-increase-height)
@@ -45,6 +59,7 @@
   "f" 'helm-projectile
   "b" 'switch-to-buffer
   "w" 'save-buffer
+  "x" 'helm-M-x
   "k" 'kill-buffer)
 
 ;; Nerd Commenter
@@ -64,3 +79,5 @@
   "\\" 'evilnc-comment-operator)
 
 (provide 'init-evil)
+
+;;; init-evil.el ends here
