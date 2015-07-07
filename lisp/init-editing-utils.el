@@ -29,6 +29,7 @@
  truncate-lines t
  truncate-partial-width-windows nil
  ring-bell-function 'ignore
+ enable-local-variables :all ; this could be risky (alternative values are t or :safe)
  visible-bell nil)
 
 
