@@ -30,7 +30,6 @@
  truncate-partial-width-windows nil
  ring-bell-function 'ignore
  enable-local-variables :all ; this could be risky (alternative values are t or :safe)
- compilation-ask-about-save nil
  visible-bell nil)
 
 (defadvice compile (around compile/save-window-excursion first () activate)
