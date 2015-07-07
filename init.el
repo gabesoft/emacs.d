@@ -37,7 +37,9 @@
 (require 'init-flycheck)
 
 (require 'init-recentf)
-(require 'init-hippie-expand)
+;; (require 'init-hippie-expand)
+;; (require 'init-auto-complete)
+(require 'init-company-mode)
 (require 'init-auto-complete)
 (require 'init-windows)
 (require 'init-sessions)
