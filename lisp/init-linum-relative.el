@@ -32,7 +32,7 @@
   ;; in Insert mode, use normal line numbering
   (add-hook 'evil-insert-state-entry-hook 'bw/linum-normal-formatting)
   ;; turn off linum mode automatically when entering Emacs mode
-  (add-hook 'evil-emacs-state-entry-hook 'bw/disable-linum-mode)
+  (add-hook 'evil-emacs-state-entry-hook 'bw/linum-normal-formatting)
   ;; turn off linum mode when entering Emacs
   (add-hook 'evil-emacs-state-entry-hook 'bw/linum-normal-formatting)
 

@@ -86,6 +86,7 @@
                                         ; (require 'server)
                                         ; (unless (server-running-p) (server-start))
 
+(require 'init-multiple-cursors)
 (require 'init-key-combo)
 (require 'init-linum-relative)
 (require 'init-evil-surround)
