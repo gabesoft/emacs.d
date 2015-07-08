@@ -77,7 +77,8 @@
   "k" 'kill-buffer
   "w" 'save-buffer
   "d" 'dired-jump
-  "x" 'helm-M-x
+  "p" 'helm-M-x
+  "y" 'helm-show-kill-ring
   )
 
 ;; Nerd Commenter
