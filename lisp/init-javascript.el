@@ -42,7 +42,7 @@
   (setq
    js2-highlight-level 3
    js2-pretty-multiline-decl-indentation-p t)
-  
+
   ;; ... but enable it if flycheck can't handle javascript
   (autoload 'flycheck-get-checker-for-buffer "flycheck")
   (defun sanityinc/disable-js2-checks-if-flycheck-active ()
