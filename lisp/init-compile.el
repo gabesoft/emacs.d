@@ -15,10 +15,9 @@
            :buffer buf
            :category 'compilation)))
 
-;; disable compilation prompt for now
-;; (after-load 'compile
-;;   (add-hook 'compilation-finish-functions
-;;             'sanityinc/alert-after-compilation-finish))
+(after-load 'compile
+  (add-hook 'compilation-finish-functions
+            'sanityinc/alert-after-compilation-finish))
 
 (defvar sanityinc/last-compilation-buffer nil
   "The last buffer in which compilation took place.")

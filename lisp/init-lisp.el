@@ -62,6 +62,7 @@
       (ielm))
     (setq sanityinc/repl-original-buffer orig-buffer)))
 
+
 (defun sanityinc/repl-switch-back ()
   "Switch back to the buffer from which we reached this REPL."
   (interactive)
