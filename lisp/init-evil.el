@@ -9,6 +9,10 @@
 (require-package 'evil)
 (evil-mode t)
 
+(setq evil-motion-state-modes (append evil-emacs-state-modes
+                                      evil-motion-state-modes))
+(setq evil-emacs-state-modes nil)
+
 (when (display-graphic-p)
   (setq evil-emacs-state-cursor '("#DC322F" box))
   (setq evil-normal-state-cursor '("#268BD2" box))
@@ -78,8 +82,7 @@
   "w" 'save-buffer
   "d" 'dired-jump
   "x" 'helm-M-x
-  "p" 'helm-show-kill-ring
-  )
+  "p" 'helm-show-kill-ring)
 
 ;; Nerd Commenter
 (require-package 'evil-nerd-commenter)
