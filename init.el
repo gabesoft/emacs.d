@@ -90,6 +90,7 @@
 (require 'init-key-combo)
 (require 'init-linum-relative)
 (require 'init-evil-surround)
+(require 'init-evil-sexp)
 (require 'init-evil)
 
 (add-hook 'after-init-hook
